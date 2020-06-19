@@ -147,7 +147,7 @@ func registerClientsMetrics() {
 	registry.MustRegister(clientsNeighborCount)
 	registry.MustRegister(networkDiameter)
 
-	registry.MustRegister(conflictFinalizationRounds)
+	registry.MustRegister(conflictCount)
 	registry.MustRegister(conflictFinalizationRounds)
 	registry.MustRegister(conflictInitialOpinion)
 	registry.MustRegister(conflictOutcome)
