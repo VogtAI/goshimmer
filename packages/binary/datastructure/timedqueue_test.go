@@ -7,28 +7,28 @@ import (
 )
 
 func TestTimedQueue_Poll(t *testing.T) {
-	tq := NewTimedQueue()
+	timedQueue := NewTimedQueue()
 
 	go func() {
-		for tq.WaitForNewElements() {
-			for currentEntry := tq.Poll(); currentEntry != nil; currentEntry = tq.Poll() {
+		for timedQueue.IsProcessingElements(true) {
+			for currentEntry := timedQueue.Poll(); currentEntry != nil; currentEntry = timedQueue.Poll() {
 				fmt.Println(currentEntry)
 			}
 		}
 	}()
 
-	tq.Add(2, time.Now().Add(1*time.Second))
-	elem := tq.Add(4, time.Now().Add(2*time.Second))
-	tq.Add(6, time.Now().Add(3*time.Second))
+	timedQueue.Add(2, time.Now().Add(1*time.Second))
+	elem := timedQueue.Add(4, time.Now().Add(2*time.Second))
+	timedQueue.Add(6, time.Now().Add(3*time.Second))
+
+	time.Sleep(4 * time.Second)
 
 	elem.Cancel()
 
-	time.Sleep(3 * time.Second)
+	timedQueue.Add(6, time.Now().Add(time.Second))
+	timedQueue.Add(68, time.Now().Add(4*time.Second))
 
-	tq.Add(6, time.Now().Add(time.Second))
-	tq.Add(68, time.Now().Add(4*time.Second))
-
-	tq.Shutdown(false)
+	timedQueue.Shutdown(true)
 
 	time.Sleep(500 * time.Millisecond)
 }
