@@ -19,7 +19,7 @@ const (
 )
 
 func init() {
-	flag.Int(cfgGenesisTokenAmount, 1000000000000000, "the amount of tokens to add to the genesis output")
+	flag.Int(cfgGenesisTokenAmount, 10000000000000000000, "the amount of tokens to add to the genesis output")
 	flag.String(cfgSnapshotFileName, defaultSnapshotFileName, "the name of the generated snapshot file")
 }
 
