@@ -1,7 +1,7 @@
 {
   "analysis": {
     "client": {
-      "serverAddress": "ressims.iota.cafe:21888"
+      "serverAddress": "turing.network:21888"
     },
     "server": {
       "bindAddress": "0.0.0.0:16178"
@@ -13,7 +13,6 @@
   },
   "autopeering": {
     "entryNodes": [
-      "2PV5487xMw5rasGBXXWeqSi4hLz7r19YBt8Y1TGAsQbj@ressims.iota.cafe:15626"
     ],
     "port": 14626
   },
@@ -56,7 +55,7 @@
     ],
     "disableEvents": true,
     "remotelog": {
-      "serverAddress": "ressims.iota.cafe:5213"
+      "serverAddress": "turing.network:5213"
     }
   },
   "metrics": {
@@ -91,6 +90,6 @@
     "bindAddress": "127.0.0.1:8080"
   },
   "networkdelay": {
-    "originPublicKey": "9DB3j9cWYSuEEtkvanrzqkzCQMdH1FGv3TawJdVbDxkd"
+    "originPublicKey": "HjJmYjx8eMSRP8qwXDCY6p4MHjE7GDoSuqQjo4PKhehH"
   }
 }
